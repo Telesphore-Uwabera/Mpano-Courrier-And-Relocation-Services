@@ -1,0 +1,5 @@
+.clear { clear: both; }
+br.clear { font-size: 0; display: block; height: 0; }
+
+.bg-primary-400 { caret-color: theme("colors.white"); }
+.bg-white, .bg-grey-100, .bg-primary-200 { caret-color: theme("colors.blackAlmost"); }

@@ -1,0 +1,126 @@
+ul.mainMenu {
+	text-align: center;
+	@apply text-base clear-fix;
+	overflow: visible;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	font-size: 14px;
+	font-weight: normal;
+	letter-spacing: .1em;
+	display: flex;
+	@apply gap-6;
+
+	li {
+		text-transform: uppercase;
+		padding: 10px 4px;
+
+		&.withSubMenu {
+			&:hover ul, &.intent ul { opacity: 100; visibility: visible; }
+		}
+
+		&.current, &:hover {
+			background-image: none;
+			background-color: theme('colors.white');
+		}
+
+		a, span {
+			color: theme('colors.primary.400');
+			padding: 0;
+			display: block;
+
+			&.current, &:hover {
+				color: theme('colors.secondary.300');
+				text-decoration: none;
+			}
+
+			&.current {
+				border-bottom: 2px solid theme('colors.primary.400');
+				cursor: default;
+			}
+		}
+
+		span {
+			cursor: default;
+
+			&:hover { color: inherit; }
+		}
+
+		ul.submenu {
+			list-style: none;
+			position: absolute;
+			z-index: 5000;
+			max-width: 240px;
+			margin-left: -1px;
+			padding: 8px 0;
+			min-width: 180px;
+			margin-top: 6px;
+			border: 1px solid theme("colors.grey.300");
+			background: theme('colors.white');
+
+			visibility: hidden;
+			opacity: 0;
+			@apply ease-mine rounded-md shadow-lg transition-all duration-200;
+
+			li {
+				width: 100%;
+				margin: 0;
+				padding: 0 16px;
+				position: relative;
+				border: none;
+				background-image: none;
+
+				ul.subsubmenu {
+					list-style: none;
+					position: absolute;
+					width: auto;
+					max-width: 240px;
+					min-width: 180px;
+					background: theme('colors.white');
+					left: 100%;
+					top: -4px;
+					z-index: 4000;
+					padding: 4px 0;
+
+					opacity: 0;
+					@apply ease-mine rounded-md shadow-lg transition-all duration-200;
+					border: 1px solid theme("colors.grey.300");
+
+					li { margin: 0; }
+				}
+
+				a {
+					background: theme('colors.white') none;
+					color: theme('colors.blackAlmost');
+					display: block;
+					text-align: left;
+					padding-top: 4px;
+					padding-bottom: 4px;
+
+					&:hover, &.current { color: theme('colors.primary.400'); }
+				}
+
+				&.intent {
+					ul { opacity: 100; visibility: visible; }
+
+					> a { color: theme('colors.primary.400') !important; }
+				}
+			}
+		}
+	}
+}
+
+.fonts-loaded ul.mainMenu { font-family: 'Lato', theme("fontFamily.sans"); }
+
+@media (max-width: theme("screens.lg")) {
+	ul.mainMenu {
+		padding-left: var(--gap-horizontal);
+		padding-right: var(--gap-horizontal);
+		display: flex;
+		justify-content: space-between;
+
+		li { margin: 0;	}
+	}
+}
+
+.mm-ocd .fa-icon { display: none; }

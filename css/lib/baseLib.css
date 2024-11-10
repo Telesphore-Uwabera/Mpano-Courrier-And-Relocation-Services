@@ -1,0 +1,126 @@
+body { line-height: 1.5; }
+
+pre, cite, code, kbd, samp { font-family: 'Andale Mono', 'Courier New', Courier, monospace; }
+
+hr {
+	border: 0;
+	border-bottom: 1px solid #bbb;
+	margin: 1.5em 0;
+	padding: 0;
+}
+
+img { vertical-align: middle; font-style: italic; }
+
+nav ul { list-style: none; padding-left: 0; margin-top: 0; margin-bottom: 0; }
+ol { list-style: decimal; }
+ul { list-style: disc; }
+ul ul { list-style: circle; }
+ul, ol, dd { padding-left: 2.5em; }
+
+/* Remove possible quote marks (") from <q>, <blockquote>. */
+blockquote { padding-left: 1.25em; }
+blockquote, q {
+	quotes: none;
+	font-style: italic;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+p, pre { margin-bottom: 1.5em; }
+
+a:focus { outline: none; }
+
+ul, ol, dl, hr, blockquote, code {
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+ul ul, ul ol, ul dl, ol ol, ol ul, ol dl, dl dl, dl ul, dl ol {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+h1, h2 { font-size: 2em; }
+h3 { font-size: 1.31em; }
+h4 { font-size: 1.13em; }
+h5 { font-size: 1em; }
+h6 { font-size: 1em; font-weight: normal; }
+h1, h2, h3, h4, h5, h6 { margin: 0.5em 0; }
+
+ins {
+	text-decoration: none;
+	background-color: #ff9;
+	color: #000;
+}
+mark {
+	background-color: #ff9;
+	color: #000;
+	font-style: italic;
+	font-weight: bold;
+}
+del { text-decoration: line-through; }
+
+abbr[title], dfn[title] {
+	border-bottom: 1px dotted #000;
+	cursor:help;
+}
+
+table { border-collapse: separate; border-spacing: 0; }
+
+table.pretty {
+	/*border: 1px solid #ccc;*/
+
+	tr { border: 1px solid #ccc; background-color: #ffffff; }
+	td, th, caption { padding: 0.4em 0.66667em; }
+	th { background-color: #cee5d2; text-align: left; font-weight: bold; }
+	tr:nth-child(even) { background-color: #f6f6f6; }
+	/*tfoot { font-style: italic; }*/
+}
+
+input, button, select { vertical-align: baseline; font-family: inherit; }
+input, textarea { outline: 0; }
+button { cursor: pointer; }
+
+[type="number"], [type="text"], [type="email"], [type="search"], [type="tel"], [type="password"], select, textarea,
+[type="button"], [type="submit"], [type="reset"], button {
+	border-radius: 0;
+	padding: 0.25em;
+	background-color: #F0F0F0;
+	border: 1px solid #bbb;
+}
+
+input::-webkit-inner-spin-button, input::-webkit-outer-spin-button { -webkit-appearance: none;  margin: 0; }
+
+[type="number"] { appearance: textfield !important; }
+
+@svg-load select url(../../images/icons/select.svg) { fill: theme('colors.primary.400'); }
+
+select {
+	appearance: none;
+	background-image: svg-inline(select);
+	background-repeat: no-repeat, repeat;
+	background-position: right .42em top 50%, 0 0;
+	background-size: .6em auto, 100%;
+
+	padding-right: 24px;
+
+	&::-ms-expand {	display: none; }
+
+	&[multiple] {
+		background-image: none;
+		padding-right: inherit;
+	}
+}
+
+legend { font-weight: bold; padding: 0 0.5em; }
+fieldset {
+	padding: 0.5em 1em;
+	margin-bottom: 1.5em;
+	border: 1px solid #bbb;
+}
+
+iframe { border: 0; }
+
+:focus-visible { outline: none; }

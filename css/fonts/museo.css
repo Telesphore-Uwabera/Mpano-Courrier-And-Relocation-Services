@@ -1,0 +1,23 @@
+@font-face {
+	font-family: 'Museo2';
+	src: url('/fonts/MuseoSans_300.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap
+}
+
+@font-face {
+	font-family: 'Museo2';
+	src: url('/fonts/MuseoSans_500.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap
+}
+
+@font-face {
+	font-family: 'Museo2';
+	src: url('/fonts/MuseoSans_700.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap
+}

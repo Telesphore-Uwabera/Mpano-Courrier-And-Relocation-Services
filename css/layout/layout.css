@@ -1,0 +1,108 @@
+.contentWrapper {
+	background-position: center top;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	@apply px-8 lg:px-20;
+
+	&.grey { background-color: theme('colors.grey.200'); }
+	&.teal { background-color: #A7AEB6; }
+	&.black { background-color: theme('colors.black'); color: theme('colors.white'); }
+
+	.content {
+		margin-left: auto;
+		margin-right: auto;
+		@apply clear-fix;
+
+		&.withSidebar {
+			.sidebar {
+				width: 325px;
+				float: right;
+
+				> div {
+					margin-bottom: var(--gap-horizontal);
+					&:last-child { margin-bottom: 0; }
+
+					> h1, h2, h3, h4, h5, h6 {
+						&:first-of-type { margin-top: 0; }
+					}
+
+					& > p {
+						&:first-child { margin-top: 0; }
+						&:last-child { margin-bottom: 0; }
+
+						img { display: block; }
+					}
+				}
+			}
+
+			> article {
+				margin-right: calc(325px + var(--gap-vertical));
+				overflow: hidden;
+
+				&.product {
+					padding: 0 20px;
+					width: 100%;
+					margin-right: 0;
+					max-width: 670px;
+					margin-bottom: 30px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: theme("screens.lg")) {
+	.contentWrapper .content {
+		article {
+			p img {
+				float: none !important;
+				display: block;
+				margin-left: auto !important;
+				margin-right: auto;
+				margin-bottom: 20px !important;
+			}
+		}
+
+		&.withSidebar {
+			article { margin-right: 340px; }
+
+			.sidebar { padding-right: var(--gap-horizontal); }
+		}
+	}
+}
+
+@media (max-width: 690px) {
+	.contentWrapper .content {
+		article p img { margin: auto !important; }
+
+		&.withSidebar {
+			display: flex;
+			flex-direction: column-reverse;
+
+			article {
+				margin-right: 0;
+				width: 100%;
+
+				p img {
+					float: none !important;
+					display: block;
+					margin-left: auto !important;
+					margin-right: auto;
+					margin-bottom: 20px !important;
+				}
+			}
+
+			.sidebar {
+				width: 100%;
+				float: none;
+				padding-left: var(--gap-horizontal);
+			}
+		}
+
+		&.productPageDetail {
+			flex-direction: column;
+
+			.sidebar { order: 2; }
+		}
+	}
+}

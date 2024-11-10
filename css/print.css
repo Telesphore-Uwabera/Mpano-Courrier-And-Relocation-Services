@@ -1,0 +1,36 @@
+#headerWrapper {
+	#headerTop { display: none; }
+	header { 
+		background: transparent;
+		max-width: none;
+		margin-right: 20px;
+		
+		ul.right { display: none; } 
+		nav { display: none; } 
+	}
+}
+
+.contentWrapper .content {
+	max-width: none;
+	margin-left: 20px;
+	margin-right: 20px;
+		
+	&.withSidebar {
+		.sidebar { display: none; }
+		article { margin-right: 0; }
+		
+		&.product {
+			.sidebar {
+				display: block;
+				width: 200px;
+				
+				img { width: 200px; height: auto; }
+			}
+			article { margin-right: 219px; }
+		}	
+	}
+}
+
+a.share { display: none; }
+
+#footerWrapper { display: none; }

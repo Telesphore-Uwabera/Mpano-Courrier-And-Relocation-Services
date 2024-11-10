@@ -1,0 +1,39 @@
+@import "swiper/swiper.css";
+@import "swiper/modules/navigation.css";
+@import "swiper/modules/pagination.css";
+
+/*#bannerMain {*/
+/*	max-height: 598px;*/
+/*}*/
+
+/*#bannerMainBrands {*/
+/*	.swiper-slide {*/
+/*		border-left: 1px solid #cacdd4;*/
+/*		border-right: 1px solid #7e8289;*/
+/*	}*/
+/*}*/
+
+/*#bannerMainBottom {*/
+/*	margin-bottom: 4px;*/
+/*	max-height: 300px;*/
+
+/*	.swiper-slide {*/
+/*		line-height: 0;*/
+/*	}*/
+
+/*	img {*/
+/*		max-width: 450px;*/
+/*		margin: 0 2px;*/
+/*		display: block;*/
+/*	}*/
+/*}*/
+
+/*.swiper { overflow: visible; }*/
+.swiper-wrapper { box-sizing: border-box; }
+.swiper-slide { height: auto; }
+
+:root {
+	--swiper-theme-color: theme("colors.white");
+	--swiper-navigation-sides-offset: 30px;
+	--swiper-pagination-bottom: 24px;
+}

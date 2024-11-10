@@ -1,0 +1,32 @@
+#cookieWarning {
+	background-color: rgba(20, 20, 20, 0.9);
+	z-index: 10000;
+	opacity: 1;
+	@apply text-xs text-white text-left;
+	@apply fixed inset-x-0 bottom-0 px-2.5 py-2;
+	@apply ease-mine transition-all duration-300;
+	@apply flex justify-center items-start sm:items-center gap-2;
+	line-height: 1.5;
+
+	p { margin: 0; }
+
+	a {
+		color: theme('colors.primary.400');
+		text-decoration: underline;
+		@apply ease-mine transition-all duration-300;
+
+		&:hover { color: theme('colors.primary.200')}
+
+		&.close {
+			padding: 4px 6px;
+			@apply text-2xl;
+			text-decoration: none;
+			line-height: 1;
+		}
+	}
+
+	&.cookieHide {
+		opacity: 0;
+		bottom: -40px;
+	}
+}

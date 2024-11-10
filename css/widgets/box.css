@@ -1,0 +1,12 @@
+.box { @apply boxHelper; }
+.noticeBox { @apply noticeBoxHelper; }
+
+.userBox {
+	width: 500px;
+	margin: 0 auto;
+	@apply boxHelper;
+
+	.renderWithName {
+		margin-bottom: 4px !important;
+	}
+}
