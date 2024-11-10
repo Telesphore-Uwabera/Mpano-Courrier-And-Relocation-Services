@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="icon" type="image/png" href="images/logo/mcds.jpg">
+    <title>MPANO COURIER AND RELOCATION SERVICES - Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Meta Tags (for SEO, etc.) -->
+    <meta name="description" content="">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="resource-type" content="document">
+    <meta name="rating" content="general">
+    
+    <!-- Link stylesheets and scripts -->
+    <link rel="stylesheet" href="/css/main1.css" media="all"/>
+    <link rel="stylesheet" href="/css/print1.css" media="print"/>
+
+    <!-- Custom Styles for Layout -->
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .form-wrapper input[type="file"] {
+            margin-bottom: 10px;
+        }
+        .form-wrapper button {
+            padding: 10px 20px;
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-wrapper button:hover {
+            background-color: #3cb371;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Admin Upload Page</h1>
+        </header>
+
+        <div class="form-wrapper">
+            <h2>Upload a Photo</h2>
+            <form id="upload-form" action="/api/photos/upload" method="POST" enctype="multipart/form-data">
+                <label for="photo">Select Photo:</label>
+                <input type="file" id="photo" name="photo" accept="image/*" required>
+                <br>
+                <label for="description">Description (optional):</label>
+                <input type="text" id="description" name="description">
+                <br><br>
+                <button type="submit">Upload Photo</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Form submission handler
+        document.getElementById('upload-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+
+            fetch('/api/photos/upload', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Redirect to photos.html after successful upload
+                    window.location.href = 'Sabine/photos.html';
+                } else {
+                    alert('Photo upload failed');
+                }
+            })
+            .catch(error => {
+                console.error('Error uploading photo:', error);
+                alert('Error uploading photo');
+            });
+        });
+    </script>
+
+</body>
+</html>

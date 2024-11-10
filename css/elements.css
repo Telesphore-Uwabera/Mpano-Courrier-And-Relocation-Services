@@ -1,0 +1,117 @@
+html {
+	font-size: 16px;
+	height: 100%;
+
+	@screen sm { font-size: 15px; }
+}
+
+body {
+	background-color: theme('colors.white');
+	background-repeat: no-repeat;
+	background-position: center top;
+	color: theme('colors.blackAlmost');
+
+	font-weight: 300;
+	font-size: 18px;
+	height: 100%;
+
+	@screen lg { font-size: 21px; }
+}
+
+.fonts-loaded body { font-family: 'Museo2', theme('fontFamily.sans'); }
+
+a {
+	color: theme('colors.secondary.300');
+	text-decoration: none;
+	@apply ease-mine transition-all duration-300;
+
+	&:hover { color: inherit; text-decoration: underline; }
+}
+
+hr {
+	border-bottom-color: theme("colors.grey.400");
+	margin: 32px 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0.5em 0;
+	font-weight: 500;
+	color: theme('colors.primary.400');
+}
+.fonts-loaded { h1, h2, h3, h4, h5, h6 { font-family: 'Baro2', theme('fontFamily.serif'); }}
+
+.cms-bg-primary-400 {
+	h1, h2, h3, h4, h5, h6 {
+		color: theme('colors.white');
+	}
+}
+
+h1, h2 {
+	line-height: 1.2;
+	font-weight: bold;
+	border-bottom: 2px solid theme("colors.primary.400");
+	padding-bottom: 12px;
+	display: inline-block;
+}
+
+h3 + h2, h3 + h1 {
+	margin-top: -6px !important;
+}
+
+h1 { @apply text-4xl; }
+h2 { @apply text-4xl; }
+h3 { @apply text-3xl; }
+h4 { @apply text-2xl; }
+h5 { @apply text-2xl; }
+
+ul { margin: 1.25em 0; }
+p { margin: 0 0 1em; }
+
+strong, b { font-weight: 700; }
+
+@screen sm {
+	h1 { @apply text-6xl; }
+	h2 { @apply text-5xl; }
+}
+
+blockquote {
+	margin: 128px 0 96px;
+	padding: 40px 0;
+	position: relative;
+
+	.stylistic-quote-mark-before, .stylistic-quote-mark-after {
+		z-index: 0;
+		position: absolute;
+		font-size: 300px;
+		line-height: 1;
+		display: block;
+
+		@screen md { font-size: 240px; }
+	}
+
+	.stylistic-quote-mark-before {
+		left: -40px;
+		top: -96px;
+
+		@screen md { left: -40px; }
+	}
+
+	.stylistic-quote-mark-after {
+		right: 0;
+		bottom: -32px;
+
+		@screen md { right: -20px; }
+	}
+
+	cite {
+		position: relative;
+		@apply font-serif not-italic;
+		z-index: 1;
+	}
+
+	@screen md {
+		margin-top: 96px;
+		margin-bottom: 64px;
+		padding-top: 0;
+	}
+}

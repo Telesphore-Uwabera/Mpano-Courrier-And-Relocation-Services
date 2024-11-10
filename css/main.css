@@ -1,0 +1,82 @@
+@import "tailwindcss/base";
+
+@import "globals.css";
+@import "lib/baseLib.css";
+
+@import "fonts/baro.css";
+@import "fonts/museo.css";
+/*@import "fonts/googleFonts.css";*/
+
+@import "layout/layout.css";
+@import "layout/header.css";
+@import "layout/footer.css";
+@import "layout/menu.css";
+@import "layout/menuSmall.css";
+
+@import "plugins/swiper.css";
+/*@import "lightgallery/css/lightgallery.css";*/
+/*@import "lightgallery/css/lg-video.css";*/
+@import "mmenu-light/dist/mmenu-light.css";
+
+/*@import "rc-pagination/assets/index.css";*/
+/*@import "plugins/rc/pagination.css";*/
+
+/*@import "rc-checkbox/assets/index.css";*/
+/*@import "plugins/rc/checkbox.css";*/
+
+@import "widgets/logo.css";
+@import "widgets/form.css";
+@import "widgets/qcodo.css";
+@import "widgets/navicon.css";
+/*@import "widgets/address.css";*/
+/*@import "widgets/basket.css";*/
+/*@import "widgets/breadcrumbs.css";*/
+/*@import "widgets/productBox.css";*/
+@import "widgets/cookie.css";
+/*@import "widgets/tabs.css";*/
+@import "widgets/other.css";
+/*@import "widgets/popout.css";*/
+@import "widgets/box.css";
+@import "widgets/accordion.css";
+
+/*@import "pages/catalog.css";*/
+/*@import "pages/product.css";*/
+/*@import "pages/search.css";*/
+/*@import "pages/checkout.css";*/
+/*@import "pages/user.css";*/
+
+@import "admin/widgets/adminMenu.css";
+
+@import "elements.css";
+
+@import "lib/helper.css";
+@import "lib/tailwindUtilities.css";
+
+@import "fonts/awesomeSolid.css";
+@import "widgets/services.css";
+
+@config "../tailwind.main.plugins.config.js";
+
+/* code here */
+
+#container {
+	background-color: theme('colors.white');
+	overflow: hidden;
+}
+
+.headerBox {
+	@apply min-h-[240px] lg:min-h-[440px] text-center flex justify-center items-center text-white;
+
+	h1, h2 {
+		@apply border-0 text-white m-0 p-0;
+	}
+}
+
+.fonts-loaded {
+	.cms-font-serif, .font-serif { font-family: 'Baro2', theme("fontFamily.serif");  }
+	.cms-font-sans, .font-sans { font-family: 'Museo2', theme("fontFamily.sans"); }
+	.cms-font-lato, .font-lato { font-family: 'Lato', theme("fontFamily.sans"); }
+}
+
+@tailwind components;
+@tailwind utilities;

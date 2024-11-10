@@ -1,0 +1,28 @@
+@svg-load logo url(../../images/logo/wwma_logo_03-24_top.svg);
+
+.logo {
+	background: transparent svg-inline(logo) no-repeat center center;
+	width: 172px;
+	height: 144px;
+	background-size: contain;
+	@apply text-hide;
+	display: block;
+}
+
+@svg-load logoHallo url(../../images/logo/hallo_logo.svg) {
+	fill: theme('colors.white');
+}
+
+.logoHallo {
+	background: transparent svg-inline(logoHallo) no-repeat center center;
+	width: 88px;
+	height: 48px;
+	background-size: contain;
+	@apply text-hide;
+	display: block;
+
+	&.small {
+		width: calc(88px / 2);
+		height: calc(48px / 2);
+	}
+}
